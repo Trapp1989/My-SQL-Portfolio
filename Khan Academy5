@@ -1,0 +1,24 @@
+CREATE TABLE ShoeStore (id INTEGER PRIMARY KEY, item TEXT, department TEXT, price REAL, instock INTEGER);
+
+INSERT INTO ShoeStore VALUES (1, "Jordan I Chicago", "Basketball", 160.99, 7);
+INSERT INTO ShoeStore VALUES (2, "Jordan V Fire Red", "Basketball", 190.99, 3);
+INSERT INTO ShoeStore VALUES (3, "Jordan XI Concord", "Basketball", 220.99, 6);
+INSERT INTO ShoeStore VALUES (4, "Jordan XI Bred", "Basketball", 220.99, 4);
+INSERT INTO ShoeStore VALUES (5, "Jordan I Bordeaux", "Basketball", 185.99, 2);
+INSERT INTO ShoeStore VALUES (6, "Adidas Samoa", "Casual", 79.99, 11);
+INSERT INTO ShoeStore VALUES (7, "Nike Presto", "Running", 120.99, 7);
+INSERT INTO ShoeStore VALUES (8, "White Nike Air Force One Low", "Basketball", 99.99, 8);
+INSERT INTO ShoeStore VALUES (9, "Black Nike Air Force One Low", "Basketball", 99.99, 8);
+INSERT INTO ShoeStore VALUES (10, "White Nike Air Force One Mid", "Basketball", 110.99, 4);
+INSERT INTO ShoeStore VALUES (11, "Black Nike Air Force One Mid", "Basketball", 110.99, 5);
+INSERT INTO ShoeStore VALUES (12, "Sperry Loafers", "Casual", 89.99, 2);
+INSERT INTO ShoeStore VALUES (13, "UGG Boots", "Casual", 120.99, 3);
+INSERT INTO ShoeStore VALUES (14, "Jordan XI Space Jam", "Basketball", 220.99, 4);
+INSERT INTO ShoeStore VALUES (15, "Jordan XI Cool Grey", "Basketball", 220.99, 2);
+
+SELECT * FROM ShoeStore ORDER BY price;
+
+SELECT department, MAX(price) FROM ShoeStore GROUP BY department ORDER BY price;
+
+SELECT department, round(MAX(price) * instock, 2 ) FROM ShoeStore GROUP BY department ORDER BY price * instock;
+SELECT * FROM ShoeStore;
