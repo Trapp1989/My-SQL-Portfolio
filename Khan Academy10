@@ -1,0 +1,36 @@
+/* Create table about famous people and their occupation and years active */
+
+CREATE TABLE Actors 
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    yearsactive INTEGER);
+    
+INSERT INTO Actors (fullname,yearsactive) VALUES ("Bruce Willis", "30");
+INSERT INTO Actors (fullname,yearsactive) VALUES ("Will Smith", "32");
+INSERT INTO Actors (fullname,yearsactive) VALUES ("Queen Latifah", "28");
+INSERT INTO Actors (fullname,yearsactive) VALUES ("LeBron James", "20");
+INSERT INTO Actors (fullname,yearsactive) VALUES ("Chris Brown", "17");
+
+CREATE table occupations_work (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    name TEXT);
+
+INSERT INTO occupations_work (person_id,name) VALUES (1, "Actor");
+INSERT INTO occupations_work (person_id,name) VALUES (1, "Actor");
+INSERT INTO occupations_work (person_id,name) VALUES (2, "Actor");
+INSERT INTO occupations_work (person_id,name) VALUES (2, "Music");
+INSERT INTO occupations_work (person_id,name) VALUES (3, "Actor");
+INSERT INTO occupations_work (person_id,name) VALUES (3, "Music");
+INSERT INTO occupations_work (person_id,name) VALUES (3, "Model");
+INSERT INTO occupations_work (person_id,name) VALUES (4, "Actor");
+INSERT INTO occupations_work (person_id,name) VALUES (4, "Basketball");
+INSERT INTO occupations_work (person_id,name) VALUES (4, "Producer");
+INSERT INTO occupations_work (person_id,name) VALUES (5, "Actor");
+INSERT INTO occupations_work (person_id,name) VALUES (5, "Music");
+
+SELECT Actors.fullname, occupations_work.name FROM Actors 
+    JOIN occupations_work 
+    ON Actors.id=occupations_work.person_id;
+SELECT * FROM occupations_work;
+SELECT * FROM Actors;
